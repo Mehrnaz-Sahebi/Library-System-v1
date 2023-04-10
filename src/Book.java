@@ -18,4 +18,68 @@ public class Book {
         this.category = category;
         this.libraryId = libraryId;
     }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public void setYearOfPublishing(int yearOfPublishing) {
+        this.yearOfPublishing = yearOfPublishing;
+    }
+
+    public void setCountOfCopies(int countOfCopies) {
+        this.countOfCopies = countOfCopies;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setLibraryId(String libraryId) {
+        this.libraryId = libraryId;
+    }
+
+    public String getBookId() {
+        return bookId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public int getYearOfPublishing() {
+        return yearOfPublishing;
+    }
+
+    public int getCountOfCopies() {
+        return countOfCopies;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getLibraryId() {
+        return libraryId;
+    }
 }

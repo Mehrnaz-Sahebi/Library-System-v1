@@ -5,14 +5,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String commandLine = scanner.nextLine();
         String[] partsOfCommandLine = commandLine.split("[#|]+");
-        Command command = new Command(partsOfCommandLine[0]);
         while(!partsOfCommandLine[0].equals("finish")){
-            if(partsOfCommandLine[0].equals()){
-                command.
+            if(partsOfCommandLine[0].equals("add-library")){
+
             }
             commandLine = scanner.nextLine();
             partsOfCommandLine = commandLine.split("[#|]+");
-            command = new Command(partsOfCommandLine[0]);
 
         }
 

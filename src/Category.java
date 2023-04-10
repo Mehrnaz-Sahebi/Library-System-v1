@@ -6,4 +6,12 @@ public class Category {
         this.categoryId = categoryId;
         this.name = name;
     }
+
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
