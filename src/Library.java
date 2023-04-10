@@ -54,5 +54,26 @@ public class Library {
         }
         return null;
     }
+    public void editBook(String bookId, String title,String author, String publisher, String yearOfPublishing, String countOfCopies, String category){
+        if(this.getBook(bookId)==null) {
+            return;
+        }
+        Book book = this.getBook(bookId);
+        if(!title.equals("-")){
+            book.setTitle(title);
+        }if(!author.equals("-")){
+            book.setAuthor(author);
+        }if(!publisher.equals("-")){
+            book.setPublisher(publisher);
+        }if(!yearOfPublishing.equals("-")){
+            book.setYearOfPublishing(Integer.parseInt(yearOfPublishing));
+        }if(!countOfCopies.equals("-")){
+            book.setCountOfCopies(Integer.parseInt(countOfCopies));
+        }
+        if(!category.equals("-")){
+            book.setCategory(category);
+        }
+        return;
+    }
 
 }

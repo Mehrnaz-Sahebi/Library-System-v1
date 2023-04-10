@@ -48,6 +48,18 @@ public class Main {
                 }
             }
 
+            //edit-book
+
+            if(partsOfCommand[0].equals("edit-book")){
+                if(libraries.getLibrary(partsOfCommand[2])==null||libraries.getLibrary(partsOfCommand[2]).getBook(partsOfCommand[1])==null){
+                    System.out.println("not-found");
+                }
+                else {
+                    libraries.getLibrary(partsOfCommand[2]).editBook(partsOfCommand[1],partsOfCommand[3],partsOfCommand[4],partsOfCommand[5],partsOfCommand[6],partsOfCommand[7],partsOfCommand[8]);
+                    System.out.println("success");
+                }
+            }
+
             command = scanner.nextLine();
             partsOfCommand = command.split("[#|]+");
 
