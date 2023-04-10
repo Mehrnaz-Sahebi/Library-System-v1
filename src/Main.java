@@ -103,6 +103,21 @@ public class Main {
                 }
             }
 
+            //remove-thesis
+
+            if(partsOfCommand[0].equals("remove-thesis")){
+                if(libraries.getLibrary(partsOfCommand[2])==null||libraries.getLibrary(partsOfCommand[2]).getThesis(partsOfCommand[1])==null){
+                    System.out.println("not-found");
+                }
+//                else if (){
+//                    // if the thesis was borrowed
+//                    System.out.println("not-allowed");
+//               }
+                else {
+                    libraries.getLibrary(partsOfCommand[2]).removeThesis(partsOfCommand[1]);
+                    System.out.println("success");
+                }
+            }
 
             command = scanner.nextLine();
             partsOfCommand = command.split("[#|]+");
