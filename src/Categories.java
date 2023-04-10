@@ -6,6 +6,8 @@ public class Categories {
 
     public Categories() {
         categoriesSet = new HashSet<Category>();
+        Category category = new Category("null","null");
+        categoriesSet.add(category);
     }
     public void addCategory(String categoryId , String name) {
         Category category= new Category(categoryId, name);

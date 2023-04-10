@@ -66,16 +66,30 @@ public class Main {
                 if(libraries.getLibrary(partsOfCommand[2])==null||libraries.getLibrary(partsOfCommand[2]).getBook(partsOfCommand[1])==null){
                     System.out.println("not-found");
                 }
-                else if (){
-                    // if the book was borrowed
-                    System.out.println("not-allowed");
-                }
+//                else if (){
+//                    // if the book was borrowed
+//                    System.out.println("not-allowed");
+//                }
                 else {
                     libraries.getLibrary(partsOfCommand[2]).removeBook(partsOfCommand[1]);
                     System.out.println("success");
                 }
             }
 
+            //add-thesis
+
+            if(partsOfCommand[0].equals("add-thesis")){
+                if (libraries.getLibrary(partsOfCommand[7])==null||categories.getCategory(partsOfCommand[6])==null){
+                    System.out.println("not-found");
+                }
+                else if(libraries.getLibrary(partsOfCommand[7]).getThesis(partsOfCommand[1])!=null){
+                    System.out.println("duplicate-id");
+                }
+                else {
+                    libraries.getLibrary(partsOfCommand[7]).addThesis(partsOfCommand[1],partsOfCommand[2],partsOfCommand[3],partsOfCommand[4],Integer.parseInt(partsOfCommand[5]),partsOfCommand[6],partsOfCommand[7]);
+                    System.out.println("success");
+                }
+            }
             command = scanner.nextLine();
             partsOfCommand = command.split("[#|]+");
 

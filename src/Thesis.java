@@ -11,7 +11,7 @@ public class Thesis {
         this.thesisId = thesisId;
         this.title = title;
         this.studentName = studentName;
-        Supervisor = supervisor;
+        this.Supervisor = supervisor;
         this.yearOfDefense = yearOfDefense;
         this.category = category;
         this.libraryId = libraryId;
