@@ -60,6 +60,22 @@ public class Main {
                 }
             }
 
+            //remove-book
+
+            if(partsOfCommand[0].equals("remove-book")){
+                if(libraries.getLibrary(partsOfCommand[2])==null||libraries.getLibrary(partsOfCommand[2]).getBook(partsOfCommand[1])==null){
+                    System.out.println("not-found");
+                }
+                else if (){
+                    // if the book was borrowed
+                    System.out.println("not-allowed");
+                }
+                else {
+                    libraries.getLibrary(partsOfCommand[2]).removeBook(partsOfCommand[1]);
+                    System.out.println("success");
+                }
+            }
+
             command = scanner.nextLine();
             partsOfCommand = command.split("[#|]+");
 

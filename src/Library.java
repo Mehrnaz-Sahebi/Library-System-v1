@@ -75,5 +75,13 @@ public class Library {
         }
         return;
     }
+    public void removeBook(String bookId){
+        if(this.getBook(bookId)==null){
+            return;
+        }
+        Book book = this.getBook(bookId);
+        books.remove(book);
+        return;
+    }
 
 }
