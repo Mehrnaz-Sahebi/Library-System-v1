@@ -110,7 +110,7 @@ public class Library {
         }
         return null;
     }
-    public void editThesis(String thesisId, String libraryId , String title, String studentName, String supervisor, String yearOfDefense, String category){
+    public void editThesis(String thesisId, String title, String studentName, String supervisor, String yearOfDefense, String category){
         if(this.getThesis(thesisId)==null){
             return;
         }

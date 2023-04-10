@@ -90,6 +90,20 @@ public class Main {
                     System.out.println("success");
                 }
             }
+
+            //edit-thesis
+
+            if(partsOfCommand[0].equals("edit-thesis")){
+                if(libraries.getLibrary(partsOfCommand[2])==null||libraries.getLibrary(partsOfCommand[2]).getThesis(partsOfCommand[1])==null){
+                    System.out.println("not-found");
+                }
+                else {
+                    libraries.getLibrary(partsOfCommand[2]).editThesis(partsOfCommand[1],partsOfCommand[3],partsOfCommand[4],partsOfCommand[5],partsOfCommand[6],partsOfCommand[7]);
+                    System.out.println("success");
+                }
+            }
+
+
             command = scanner.nextLine();
             partsOfCommand = command.split("[#|]+");
 
