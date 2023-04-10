@@ -11,14 +11,7 @@ public class Libraries {
         librariesSet.add(library);
     }
 
-    public boolean doesLibraryExists(String libraryId) {
-        for (Library library: librariesSet) {
-            if (library.getLibraryId().equals(libraryId)){
-                return true;
-            }
-        }
-        return false;
-    }
+
     public Library getLibrary(String libraryId){
         for (Library library:librariesSet) {
             if(library.getLibraryId().equals(libraryId)){
@@ -27,5 +20,6 @@ public class Libraries {
         }
         return null;
     }
+
 
 }

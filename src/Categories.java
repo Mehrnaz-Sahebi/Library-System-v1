@@ -12,14 +12,7 @@ public class Categories {
         categoriesSet.add(category);
     }
 
-    public boolean doesCategoryExists(String categoryId) {
-        for (Category category: categoriesSet) {
-            if (category.getCategoryId().equals(categoryId)){
-                return true;
-            }
-        }
-        return false;
-    }
+
     public Category getCategory(String categoryId){
         for (Category category:categoriesSet) {
             if(category.getCategoryId().equals(categoryId)){
