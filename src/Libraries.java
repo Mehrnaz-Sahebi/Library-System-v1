@@ -7,7 +7,7 @@ public class Libraries {
     }
 
     public void addLibrary(String libraryId, String name, int yearOfEstablishment, int countOfDesks, String address) {
-        Library library = new Library(libraryId, name, yearOfEstablishment, countOfDesks, address)
+        Library library = new Library(libraryId, name, yearOfEstablishment, countOfDesks, address);
         librariesSet.add(library);
     }
 
