@@ -173,6 +173,18 @@ public class Main {
                 }
             }
 
+            //edit-staff
+
+            if(partsOfCommand[0].equals("edit-staff")){
+                if(staffs.getStaff(partsOfCommand[1])==null){
+                    System.out.println("not-found");
+                }
+                else {
+                    staffs.editStaff(partsOfCommand[1],partsOfCommand[2],partsOfCommand[3],partsOfCommand[4],partsOfCommand[5],partsOfCommand[6],partsOfCommand[7]);
+                    System.out.println("success");
+                }
+            }
+
             command = scanner.nextLine();
             partsOfCommand = command.split("[#|]+");
 
