@@ -42,4 +42,12 @@ public class Students {
         }
         return;
     }
+    public void removeStudent(String studentId){
+        if (this.getStudent(studentId)==null){
+            return;
+        }
+        Student student = getStudent(studentId);
+        students.remove(student);
+        return;
+    }
 }

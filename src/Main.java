@@ -144,6 +144,22 @@ public class Main {
                 }
             }
 
+            //remove-student
+
+            if(partsOfCommand[0].equals("remove-student")){
+                if(students.getStudent(partsOfCommand[1])==null){
+                    System.out.println("not-found");
+                }
+//                else if () {
+//                    //if the student owns something or has borrowed something
+//                    //System.out.println("not-allowed");
+//                }
+                else {
+                    students.removeStudent(partsOfCommand[1]);
+                    System.out.println("success");
+                }
+            }
+
             command = scanner.nextLine();
             partsOfCommand = command.split("[#|]+");
 
