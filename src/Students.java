@@ -17,4 +17,29 @@ public class Students {
         }
         return null;
     }
+    public void editStudent(String studentId, String password, String firstName, String lastName, String nationalId, String yearOfBirth, String address){
+        if(this.getStudent(studentId)==null){
+            return;
+        }
+        Student student = this.getStudent(studentId);
+        if(!password.equals("-")){
+            student.setPassword(password);
+        }
+        if(!firstName.equals("-")){
+            student.setFirstName(firstName);
+        }
+        if(!lastName.equals("-")){
+            student.setLastName(lastName);
+        }
+        if(!nationalId.equals("-")){
+            student.setNationalId(nationalId);
+        }
+        if(!yearOfBirth.equals("-")){
+            student.setYearOfBirth(Integer.parseInt(yearOfBirth));
+        }
+        if(!address.equals("-")){
+            student.setAddress(address);
+        }
+        return;
+    }
 }
