@@ -185,6 +185,22 @@ public class Main {
                 }
             }
 
+            //remove-staff
+
+            if(partsOfCommand[0].equals("remove-staff")){
+                if(staffs.getStaff(partsOfCommand[1])==null){
+                    System.out.println("not-found");
+                }
+//                else if () {
+//                    //if the staff owns something or has borrowed something
+//                    //System.out.println("not-allowed");
+//                }
+                else {
+                    staffs.removeStaff(partsOfCommand[1]);
+                    System.out.println("success");
+                }
+            }
+
             command = scanner.nextLine();
             partsOfCommand = command.split("[#|]+");
 

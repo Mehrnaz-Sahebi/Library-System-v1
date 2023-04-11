@@ -42,4 +42,12 @@ public class Staffs {
         }
         return;
     }
+    public void removeStaff(String personnelId){
+        if (this.getStaff(personnelId)==null){
+            return;
+        }
+        Staff staff = this.getStaff(personnelId);
+        staffs.remove(staff);
+        return;
+    }
 }
