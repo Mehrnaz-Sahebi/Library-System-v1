@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Libraries libraries = new Libraries();
         Categories categories = new Categories();
+        Students students = new Students();
         Scanner scanner = new Scanner(System.in);
         String command = scanner.nextLine();
         String[] partsOfCommand= command.split("[#|]+");
@@ -51,7 +52,7 @@ public class Main {
             //edit-book
 
             if(partsOfCommand[0].equals("edit-book")){
-                if(libraries.getLibrary(partsOfCommand[2])==null||libraries.getLibrary(partsOfCommand[2]).getBook(partsOfCommand[1])==null){
+                if(libraries.getLibrary(partsOfCommand[2])==null||libraries.getLibrary(partsOfCommand[2]).getBook(partsOfCommand[1])==null||categories.getCategory(partsOfCommand[8])==null){
                     System.out.println("not-found");
                 }
                 else {
@@ -94,7 +95,7 @@ public class Main {
             //edit-thesis
 
             if(partsOfCommand[0].equals("edit-thesis")){
-                if(libraries.getLibrary(partsOfCommand[2])==null||libraries.getLibrary(partsOfCommand[2]).getThesis(partsOfCommand[1])==null){
+                if(libraries.getLibrary(partsOfCommand[2])==null||libraries.getLibrary(partsOfCommand[2]).getThesis(partsOfCommand[1])==null||categories.getCategory(partsOfCommand[7])==null){
                     System.out.println("not-found");
                 }
                 else {
@@ -115,6 +116,18 @@ public class Main {
 //               }
                 else {
                     libraries.getLibrary(partsOfCommand[2]).removeThesis(partsOfCommand[1]);
+                    System.out.println("success");
+                }
+            }
+
+            //add-student
+
+            if(partsOfCommand[0].equals("add-student")){
+                if(students.getStudent(partsOfCommand[1])!=null){
+                    System.out.println("duplicate-id");
+                }
+                else {
+                    students.addStudent(partsOfCommand[1],partsOfCommand[2],partsOfCommand[3],partsOfCommand[4],partsOfCommand[5],Integer.parseInt(partsOfCommand[6]),partsOfCommand[7]);
                     System.out.println("success");
                 }
             }
