@@ -83,6 +83,7 @@ public class Library {
             book.setYearOfPublishing(Integer.parseInt(yearOfPublishing));
         }if(!countOfCopies.equals("-")){
             book.setCountOfCopies(Integer.parseInt(countOfCopies));
+            book.setRemaining(Integer.parseInt(countOfCopies));
         }if(!category.equals("-")){
             book.setCategory(category);
         }

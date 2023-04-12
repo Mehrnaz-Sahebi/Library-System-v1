@@ -108,4 +108,8 @@ public class User {
     public long getDebt() {
         return debt;
     }
+
+    public void addToDebt(long newDebt){
+        this.setDebt(this.getDebt()+newDebt);
+    }
 }

@@ -47,6 +47,7 @@ public class Main {
                 else {
                     libraries.getLibrary(poc[8]).addBook(poc[1],poc[2],poc[3],poc[4],Integer.parseInt(poc[5]),Integer.parseInt(poc[6]),poc[7],poc[8]);
                     System.out.println("success");
+
                 }
             }
 
@@ -68,13 +69,14 @@ public class Main {
                 if(libraries.getLibrary(poc[2])==null||libraries.getLibrary(poc[2]).getBook(poc[1])==null){
                     System.out.println("not-found");
                 }
-                else if (libraries.getLibrary(poc[2]).getBook(poc[1]).getRemaining()<libraries.getLibrary(poc[2]).getBook(poc[1]).getCountOfCopies()){
+                else if ((libraries.getLibrary(poc[2]).getBook(poc[1]).getRemaining())<(libraries.getLibrary(poc[2]).getBook(poc[1]).getCountOfCopies())){
                     System.out.println("not-allowed");
                 }
                 else {
                     libraries.getLibrary(poc[2]).removeBook(poc[1]);
                     System.out.println("success");
                 }
+
             }
 
             //add-thesis
@@ -235,7 +237,36 @@ public class Main {
                 }
             }
 
+            //return
 
+            if(poc[0].equals("return")){
+                if(users.getUser(poc[1])==null){
+                    System.out.println("not-found");
+                }
+                else if(libraries.getLibrary(poc[3])==null||libraries.getLibrary(poc[3]).getThesis(poc[4])==null&&libraries.getLibrary(poc[3]).getBook(poc[4])==null){
+                    System.out.println("not-found");
+                }
+                else if(borrowings.doesBorrowingExists(poc[1],poc[3],poc[4])==false){
+                    System.out.println("not-found");
+                }
+                else if(!users.getUser(poc[1]).getPassword().equals(poc[2])){
+                    System.out.println("invalid-pass");
+                }
+                else{
+                    long debt = borrowings.returning(poc[1],poc[3],poc[4],poc[5],poc[6],libraries.getLibrary(poc[3]).isBook(poc[4]),users.getUser(poc[1]).isStudent());
+                    users.getUser(poc[1]).addToDebt(debt);
+                    if(libraries.getLibrary(poc[3]).isBook(poc[4])==false){
+                        users.returnsAThesis(poc[1]);
+                        libraries.getLibrary(poc[3]).getThesis(poc[4]).setBorrowed(false);
+                    }
+                    if(libraries.getLibrary(poc[3]).isBook(poc[4])){
+                        users.returnsABook(poc[1]);
+                        libraries.getLibrary(poc[3]).getBook(poc[4]).setRemaining(libraries.getLibrary(poc[3]).getBook(poc[4]).getRemaining()+1);
+                    }
+                    if(debt!=0){System.out.println(debt);}
+                    if(debt==0){System.out.println("success");}
+                }
+            }
 
 
             command = scanner.nextLine();

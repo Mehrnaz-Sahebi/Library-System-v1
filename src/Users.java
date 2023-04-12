@@ -66,4 +66,21 @@ public class Users {
         user.setCountOfBorrowedTheses(user.getCountOfBorrowedTheses()+1);
         return;
     }
+    public void returnsABook(String userId){
+        User user = this.getUser(userId);
+        if(user==null){
+            return;
+        }
+        user.setCountOfBorrowedBooks(user.getCountOfBorrowedBooks()-1);
+        return;
+    }
+    public void returnsAThesis(String userId){
+        User user = this.getUser(userId);
+        if(user==null){
+            return;
+        }
+        user.setCountOfBorrowedTheses(user.getCountOfBorrowedTheses()-1);
+        return;
+    }
 }
+

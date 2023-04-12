@@ -13,7 +13,7 @@ public class Borrowing {
         this.bookOrThesisId = bookOrThesisId;
         String[] partsOfDate = date.split("-");
         String[] partsOfTime = time.split(":");
-        this.borrowingTime = new Date(Integer.parseInt(partsOfDate[0]), Integer.parseInt(partsOfDate[1]),Integer.parseInt(partsOfDate[2]),Integer.parseInt(partsOfTime[0]),Integer.parseInt(partsOfTime[1]));
+        this.borrowingTime = new Date(Integer.parseInt(partsOfDate[0])-1900, Integer.parseInt(partsOfDate[1])-1,Integer.parseInt(partsOfDate[2]),Integer.parseInt(partsOfTime[0]),Integer.parseInt(partsOfTime[1]));
     }
 
     public String getUserId() {
