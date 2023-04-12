@@ -6,6 +6,9 @@ public class Staff {
     private String nationalId;
     private int yearOfBirth;
     private String address;
+    private int countOfBorrowedBooks;
+    private int countOfBorrowedTheses;
+    private long debt;
 
     public Staff(String personnelId, String password, String firstName, String lastName, String nationalId, int yearOfBirth, String address) {
         this.personnelId = personnelId;
@@ -15,6 +18,9 @@ public class Staff {
         this.nationalId = nationalId;
         this.yearOfBirth = yearOfBirth;
         this.address = address;
+        this.countOfBorrowedTheses = 0;
+        this.countOfBorrowedBooks = 0;
+        this.debt = 0;
     }
 
     public void setPersonnelId(String personnelId) {
@@ -45,6 +51,18 @@ public class Staff {
         this.address = address;
     }
 
+    public void setCountOfBorrowedBooks(int countOfBorrowedBooks) {
+        this.countOfBorrowedBooks = countOfBorrowedBooks;
+    }
+
+    public void setCountOfBorrowedTheses(int countOfBorrowedTheses) {
+        this.countOfBorrowedTheses = countOfBorrowedTheses;
+    }
+
+    public void setDebt(long debt) {
+        this.debt = debt;
+    }
+
     public String getPersonnelId() {
         return personnelId;
     }
@@ -71,5 +89,17 @@ public class Staff {
 
     public String getAddress() {
         return address;
+    }
+
+    public int getCountOfBorrowedBooks() {
+        return countOfBorrowedBooks;
+    }
+
+    public int getCountOfBorrowedTheses() {
+        return countOfBorrowedTheses;
+    }
+
+    public long getDebt() {
+        return debt;
     }
 }

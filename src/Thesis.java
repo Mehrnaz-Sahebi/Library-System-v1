@@ -6,6 +6,7 @@ public class Thesis {
     private int yearOfDefense;
     private String category;
     private String libraryId;
+    private boolean isBorrowed;
 
     public Thesis(String thesisId, String title, String studentName, String supervisor, int yearOfDefense, String category, String libraryId) {
         this.thesisId = thesisId;
@@ -15,6 +16,7 @@ public class Thesis {
         this.yearOfDefense = yearOfDefense;
         this.category = category;
         this.libraryId = libraryId;
+        this.isBorrowed = false;
     }
 
     public void setThesisId(String thesisId) {
@@ -45,6 +47,10 @@ public class Thesis {
         this.libraryId = libraryId;
     }
 
+    public void setBorrowed(boolean borrowed) {
+        isBorrowed = borrowed;
+    }
+
     public String getThesisId() {
         return thesisId;
     }
@@ -71,5 +77,9 @@ public class Thesis {
 
     public String getLibraryId() {
         return libraryId;
+    }
+
+    public boolean isBorrowed() {
+        return isBorrowed;
     }
 }

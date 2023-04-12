@@ -7,6 +7,7 @@ public class Book {
     private int countOfCopies;
     private String category;
     private String libraryId;
+    private int remaining;
 
     public Book(String bookId, String title, String author, String publisher, int yearOfPublishing, int countOfCopies, String category, String libraryId) {
         this.bookId = bookId;
@@ -17,6 +18,7 @@ public class Book {
         this.countOfCopies = countOfCopies;
         this.category = category;
         this.libraryId = libraryId;
+        this.remaining = countOfCopies;
     }
 
     public void setBookId(String bookId) {
@@ -51,6 +53,10 @@ public class Book {
         this.libraryId = libraryId;
     }
 
+    public void setRemaining(int remaining) {
+        this.remaining = remaining;
+    }
+
     public String getBookId() {
         return bookId;
     }
@@ -81,5 +87,9 @@ public class Book {
 
     public String getLibraryId() {
         return libraryId;
+    }
+
+    public int getRemaining() {
+        return remaining;
     }
 }
