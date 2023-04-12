@@ -274,6 +274,20 @@ public class Main {
                 libraries.search(poc[1]);
             }
 
+            //search-user
+
+            if(poc[0].equals("search-user")){
+                if(users.getUser(poc[1])==null){
+                    System.out.println("not-found");
+                }
+                else if (!users.getUser(poc[1]).getPassword().equals(poc[2])) {
+                    System.out.println("invalid-pass");
+                }
+                else {
+                    users.searchUser(poc[3]);
+                }
+            }
+
             command = scanner.nextLine();
             poc = command.split("[#|]+");
 

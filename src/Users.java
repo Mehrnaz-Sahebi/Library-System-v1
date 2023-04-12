@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Users {
@@ -81,6 +82,25 @@ public class Users {
         }
         user.setCountOfBorrowedTheses(user.getCountOfBorrowedTheses()-1);
         return;
+    }
+    public void searchUser(String searchKey){
+        String searchKeyToLowerCase = searchKey.toLowerCase();
+        ArrayList<String> searchResult = new ArrayList<String>();
+        for (User user: users) {
+            if(user.getFirstName().toLowerCase().contains(searchKeyToLowerCase)||user.getLastName().toLowerCase().contains(searchKeyToLowerCase)){
+                searchResult.add(user.getUserId());
+            }
+        }
+        if(searchResult.size()==0){
+            System.out.println("not-found");
+            return;
+        }
+        searchResult.sort(String::compareToIgnoreCase);
+        System.out.printf("%s",searchResult.get(0));
+        for (int i = 1; i < searchResult.size(); i++) {
+            System.out.printf("|%s",searchResult.get(i));
+        }
+        System.out.println();
     }
 }
 
