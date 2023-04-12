@@ -268,6 +268,11 @@ public class Main {
                 }
             }
 
+            //search
+
+            if(poc[0].equals("search")){
+                libraries.search(poc[1]);
+            }
 
             command = scanner.nextLine();
             poc = command.split("[#|]+");
