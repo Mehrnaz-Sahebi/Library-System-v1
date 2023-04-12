@@ -1,30 +1,32 @@
-public class Staff {
-    private String personnelId;
+public class User {
+    private String userId;
     private String password;
     private String firstName;
     private String lastName;
     private String nationalId;
     private int yearOfBirth;
     private String address;
+    private boolean isStudent;
     private int countOfBorrowedBooks;
     private int countOfBorrowedTheses;
     private long debt;
 
-    public Staff(String personnelId, String password, String firstName, String lastName, String nationalId, int yearOfBirth, String address) {
-        this.personnelId = personnelId;
+    public User(String userId, String password, String firstName, String lastName, String nationalId, int yearOfBirth, String address , boolean isStudent) {
+        this.userId = userId;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.nationalId = nationalId;
         this.yearOfBirth = yearOfBirth;
         this.address = address;
+        this.isStudent = isStudent;
         this.countOfBorrowedTheses = 0;
         this.countOfBorrowedBooks = 0;
         this.debt = 0;
     }
 
-    public void setPersonnelId(String personnelId) {
-        this.personnelId = personnelId;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public void setPassword(String password) {
@@ -63,8 +65,8 @@ public class Staff {
         this.debt = debt;
     }
 
-    public String getPersonnelId() {
-        return personnelId;
+    public String getUserId() {
+        return userId;
     }
 
     public String getPassword() {
@@ -89,6 +91,10 @@ public class Staff {
 
     public String getAddress() {
         return address;
+    }
+
+    public boolean isStudent() {
+        return isStudent;
     }
 
     public int getCountOfBorrowedBooks() {

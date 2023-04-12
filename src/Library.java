@@ -136,4 +136,11 @@ public class Library {
         theses.remove(thesis);
         return;
     }
+
+    public boolean isBook(String bookOrThesisId){
+        if(this.getBook(bookOrThesisId)==null){
+            return false;
+        }
+        return true;
+    }
 }
