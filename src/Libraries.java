@@ -71,4 +71,20 @@ public class Libraries {
         }
         System.out.printf("%d %d\n", countOfBooks, countOfTheses);
     }
+    public void libraryReport(String libraryId){
+        int countOfBooks = 0;
+        int countOfTheses = this.getLibrary(libraryId).getTheses().size();
+        int countOfBorrowedBooks = 0;
+        int countOfBorrowedTheses = 0;
+        for (Book book:this.getLibrary(libraryId).getBooks()) {
+            countOfBooks+=book.getCountOfCopies();
+            countOfBorrowedBooks+=(book.getCountOfCopies()-book.getRemaining());
+        }
+        for (Thesis thesis:this.getLibrary(libraryId).getTheses()){
+            if(thesis.isBorrowed()){
+                countOfBorrowedTheses++;
+            }
+        }
+        System.out.printf("%d %d %d %d\n",countOfBooks,countOfTheses,countOfBorrowedBooks,countOfBorrowedTheses);
+    }
 }

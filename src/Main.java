@@ -299,11 +299,19 @@ public class Main {
                 }
             }
 
+            //library-report
+
+            if(poc[0].equals("library-report")){
+                if(libraries.getLibrary(poc[1])==null){
+                    System.out.println("not-found");
+                }
+                else {
+                    libraries.libraryReport(poc[1]);
+                }
+            }
+
             command = scanner.nextLine();
             poc = command.split("[#|]+");
-
         }
-
-
     }
 }
