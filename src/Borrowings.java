@@ -68,4 +68,42 @@ public class Borrowings {
             return (differenceOFDays-240)*100;
         }
     }
+    public void reportPassedDeadline(Library library,String date,String time, Users users){
+        HashSet<String> result = new HashSet<String>();
+        String[] partsOfDate = date.split("-");
+        String[] partsOfTime = time.split(":");
+        Date currentTime = new Date(Integer.parseInt(partsOfDate[0])-1900, Integer.parseInt(partsOfDate[1])-1,Integer.parseInt(partsOfDate[2]),Integer.parseInt(partsOfTime[0]),Integer.parseInt(partsOfTime[1]));
+        for (Borrowing borrowing:borrowings) {
+            if(borrowing.getLibraryId().equals(library.getLibraryId())){
+                long differenceOFDays = currentTime.getTime() - borrowing.getBorrowingTime().getTime();
+                differenceOFDays = TimeUnit.HOURS.convert(differenceOFDays, TimeUnit.MILLISECONDS);
+                if ( library.isBook(borrowing.getBookOrThesisId()) && users.getUser(borrowing.getUserId()).isStudent() && differenceOFDays > 240) {
+                    result.add(borrowing.getBookOrThesisId());
+                }
+                if( !library.isBook(borrowing.getBookOrThesisId()) && users.getUser(borrowing.getUserId()).isStudent() && differenceOFDays > 168){
+                    result.add(borrowing.getBookOrThesisId());
+                }
+                if(library.isBook(borrowing.getBookOrThesisId()) && !users.getUser(borrowing.getUserId()).isStudent() && differenceOFDays > 336){
+                    result.add(borrowing.getBookOrThesisId());
+                }
+                if(!library.isBook(borrowing.getBookOrThesisId()) && !users.getUser(borrowing.getUserId()).isStudent() && differenceOFDays > 240){
+                    result.add(borrowing.getBookOrThesisId());
+                }
+            }
+        }
+        if(result.size()==0){
+            System.out.println("none");
+            return;
+        }
+        ArrayList<String> sortedResult = new ArrayList<String>();
+        for (String element:result) {
+            sortedResult.add(element);
+        }
+        sortedResult.sort(String::compareToIgnoreCase);
+        System.out.printf("%s",sortedResult.get(0));
+        for (int i = 1; i < sortedResult.size(); i++) {
+            System.out.printf("|%s",sortedResult.get(i));
+        }
+        System.out.println();
+    }
 }

@@ -310,6 +310,19 @@ public class Main {
                 }
             }
 
+            //report-passed-deadline
+
+            if (poc[0].equals("report-passed-deadline")){
+                if(libraries.getLibrary(poc[1])==null){
+                    System.out.println("not-found");
+                }
+                else{
+                    borrowings.reportPassedDeadline(libraries.getLibrary(poc[1]),poc[2],poc[3],users);
+                }
+            }
+
+            //
+
             command = scanner.nextLine();
             poc = command.split("[#|]+");
         }
