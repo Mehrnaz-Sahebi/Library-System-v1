@@ -54,4 +54,21 @@ public class Libraries {
         }
         System.out.println();
     }
+    public void categoryReport(String categoryId) {
+        int countOfBooks = 0;
+        int countOfTheses = 0;
+        for (Library library : librariesSet) {
+            for (Book book : library.getBooks()) {
+                if (book.getCategory().equals(categoryId)) {
+                    countOfBooks += book.getCountOfCopies();
+                }
+            }
+            for (Thesis thesis : library.getTheses()) {
+                if (thesis.getCategory().equals(categoryId)) {
+                    countOfTheses++;
+                }
+            }
+        }
+        System.out.printf("%d %d\n", countOfBooks, countOfTheses);
+    }
 }

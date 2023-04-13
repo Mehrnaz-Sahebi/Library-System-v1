@@ -288,6 +288,17 @@ public class Main {
                 }
             }
 
+            //category-report
+
+            if(poc[0].equals("category-report")){
+                if(categories.getCategory(poc[1])==null){
+                    System.out.println("not-found");
+                }
+                else{
+                    libraries.categoryReport(poc[1]);
+                }
+            }
+
             command = scanner.nextLine();
             poc = command.split("[#|]+");
 
