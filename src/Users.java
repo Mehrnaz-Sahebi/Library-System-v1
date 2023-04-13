@@ -102,5 +102,12 @@ public class Users {
         }
         System.out.println();
     }
+    public long reportPenaltiesSum (){
+        long sum = 0 ;
+        for (User user:users) {
+            sum += user.getDebt();
+        }
+        return sum;
+    }
 }
 

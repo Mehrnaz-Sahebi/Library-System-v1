@@ -321,7 +321,11 @@ public class Main {
                 }
             }
 
-            //
+            //report-penalties-sum
+
+            if(poc[0].equals("report-penalties-sum")){
+                System.out.println(users.reportPenaltiesSum());
+            }
 
             command = scanner.nextLine();
             poc = command.split("[#|]+");
